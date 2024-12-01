@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
 #include "definitions.h"
-#include "apps.h"
 
 // qmk flash -kb ferris/sweep -km adamridhwan -e CONVERT_TO=blok
 
@@ -14,9 +13,17 @@ enum layers {
     MOUSE
 };
 
+enum apps {
+    BROWSER,
+    CODE,
+    SLACK,
+    NOTION,
+    SPOTIFY
+};
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case CHROME:
+        case BROWSER:
             if (record->event.pressed) {
                 register_mods(HYPER);
                 tap_code(KC_1);
@@ -74,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [NAVIGATION] = LAYOUT_split_3x5_2(
   //,-------------------------------------------------,     ,-------------------------------------------------,
-      XXXXXXX ,  SLACK  ,  CHROME ,   CODE  ,  NOTION ,       XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+      XXXXXXX ,  SLACK  , BROWSER ,   CODE  ,  NOTION ,       XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
   //|---------+---------+---------+---------+---------|     |---------+---------+---------+---------+---------|
       KC_LSFT , KC_LCTL , KC_LOPT , KC_LCMD , SPOTIFY ,       KC_LEFT , KC_DOWN ,  KC_UP  , KC_RGHT , XXXXXXX ,
   //|---------+---------+---------+---------+---------|     |---------+---------+---------+---------+---------|
