@@ -14,7 +14,7 @@ enum layers {
 };
 
 enum apps {
-    BROWSER,
+    BROWSER = SAFE_RANGE,
     CODE,
     SLACK,
     NOTION,
