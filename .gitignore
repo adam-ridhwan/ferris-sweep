@@ -1,0 +1,11 @@
+.build/
+
+*.uf2
+*.bin
+*.hex
+
+.qmk_compiler_output
+.qmk_firmware/
+
+.DS_Store
+Thumbs.db
